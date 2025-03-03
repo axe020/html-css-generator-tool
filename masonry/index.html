@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Masonry Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="controls elevation-1">
+            <div class="header">
+                <span class="material-icons">dashboard</span>
+                <h1>CSS Masonry Generator</h1>
+                <button id="helpButton" class="btn-icon" aria-label="Help">
+                    <span class="material-icons">help_outline</span>
+                </button>
+            </div>
+            <div class="grid-builder elevation-1">
+                <h3>
+                    <span class="material-icons">drag_indicator</span>
+                    Visual Masonry Builder
+                </h3>
+                <div class="builder-container">
+                    <div id="masonryBuilder" class="builder-grid">
+                        <div class="builder-overlay"></div>
+                    </div>
+                    <div class="builder-info">
+                        <span id="builderSize">Drag to add items</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-controls">
+                <div class="control-group">
+                    <label for="columns">
+                        <span class="material-icons">view_column</span>
+                        Columns
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="columns" value="4" min="1" max="12">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="gap">
+                        <span class="material-icons">space_bar</span>
+                        Gap (px)
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="gap" value="16" min="0" max="50">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="itemWidth">
+                        <span class="material-icons">straighten</span>
+                        Min Item Width (px)
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="itemWidth" value="250" min="100" max="500" step="10">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
+                <button id="generate" class="btn-primary">
+                    <span class="material-icons">refresh</span>
+                    Generate Masonry
+                </button>
+            </div>
+        </div>
+        
+        <div class="grid-container elevation-1">
+            <div id="masonry" class="masonry"></div>
+        </div>
+
+        <div class="code-output elevation-1">
+            <div class="code-header">
+                <h3>
+                    <span class="material-icons">code</span>
+                    Generated Code
+                </h3>
+                <div class="code-tabs">
+                    <button class="tab-button active" data-tab="css">
+                        <span class="material-icons">css</span>
+                        CSS
+                    </button>
+                    <button class="tab-button" data-tab="html">
+                        <span class="material-icons">html</span>
+                        HTML
+                    </button>
+                </div>
+                <button id="copyCode" class="btn-secondary">
+                    <span class="material-icons">content_copy</span>
+                    Copy Code
+                </button>
+            </div>
+            <div class="tab-content">
+                <div id="cssTab" class="tab-pane active">
+                    <pre id="cssCode"></pre>
+                </div>
+                <div id="htmlTab" class="tab-pane">
+                    <pre id="htmlCode"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="snackbar">CSS code copied to clipboard!</div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content elevation-2">
+            <div class="modal-header">
+                <h2>
+                    <span class="material-icons">school</span>
+                    How to Use CSS Masonry Generator
+                </h2>
+                <button class="btn-icon close-modal" aria-label="Close">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Visual Masonry Builder</h3>
+                        <p>Click and drag in the builder area to add masonry items of different sizes. Items will automatically arrange in a masonry layout.</p>
+                    </div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Customize Layout</h3>
+                        <p>Adjust the number of columns, gap size, and minimum item width to create your perfect masonry layout.</p>
+                    </div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Arrange Items</h3>
+                        <p>Drag and drop items to rearrange them. Items will maintain their size while fitting into the masonry layout.</p>
+                    </div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Get the Code</h3>
+                        <p>The CSS and HTML code for your masonry layout is automatically generated. Switch between tabs and click "Copy Code" to use in your project.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary close-modal">
+                    <span class="material-icons">check</span>
+                    Got it!
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

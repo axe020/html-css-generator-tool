@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Generators</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6200ee;
+            --primary-hover: #3700b3;
+            --surface: #ffffff;
+            --background: #f5f5f5;
+            --text: #1d1d1d;
+            --elevation-1: 0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
+            --elevation-2: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--elevation-1);
+            text-decoration: none;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--elevation-2);
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(98, 0, 238, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+            transform: scale(0.8);
+        }
+
+        .tool-card:hover::before {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+
+        .icon-wrapper {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .tool-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--primary-hover);
+        }
+
+        .material-icons {
+            font-size: 32px;
+            color: white;
+        }
+
+        .tool-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .tool-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #4caf50;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS Generators</h1>
+            <p class="subtitle">A collection of tools to help you generate CSS code for common layout patterns and components.</p>
+        </header>
+
+        <div class="tools-grid">
+            <a href="grid/index.html" class="tool-card">
+                <div class="icon-wrapper">
+                    <span class="material-icons">grid_view</span>
+                </div>
+                <h2 class="tool-name">Grid Generator</h2>
+                <p class="tool-description">Create responsive CSS Grid layouts with an intuitive visual builder. Perfect for modern webpage layouts.</p>
+            </a>
+
+            <a href="table/index.html" class="tool-card">
+                <div class="icon-wrapper">
+                    <span class="material-icons">table_chart</span>
+                </div>
+                <h2 class="tool-name">Table Generator</h2>
+                <p class="tool-description">Design clean and responsive tables with customizable borders, padding, and styling options.</p>
+            </a>
+
+            <a href="masonry/index.html" class="tool-card">
+                <div class="icon-wrapper">
+                    <span class="material-icons">dashboard</span>
+                </div>
+                <h2 class="tool-name">Masonry Generator</h2>
+                <p class="tool-description">Build beautiful masonry layouts for image galleries and card-based content.</p>
+                <!--<span class="new-badge">New!</span>-->
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="controls elevation-1">
+            <div class="header">
+                <span class="material-icons">grid_view</span>
+                <h1>CSS Grid Generator</h1>
+                <button id="helpButton" class="btn-icon" aria-label="Help">
+                    <span class="material-icons">help_outline</span>
+                </button>
+            </div>
+            <div class="grid-builder elevation-1">
+                <h3>
+                    <span class="material-icons">drag_indicator</span>
+                    Visual Grid Builder
+                </h3>
+                <div class="builder-container">
+                    <div id="gridBuilder" class="builder-grid">
+                        <div class="builder-overlay"></div>
+                    </div>
+                    <div class="builder-info">
+                        <span id="builderSize">Drag to create: 0 x 0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-controls">
+                <div class="control-group">
+                    <label for="rows">
+                        <span class="material-icons">table_rows</span>
+                        Rows
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="rows" value="3" min="1" max="12">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="columns">
+                        <span class="material-icons">view_column</span>
+                        Columns
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="columns" value="3" min="1" max="12">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="gap">
+                        <span class="material-icons">space_bar</span>
+                        Gap (px)
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="gap" value="10" min="0" max="50">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
+                <button id="generate" class="btn-primary">
+                    <span class="material-icons">refresh</span>
+                    Generate Grid
+                </button>
+            </div>
+        </div>
+        
+        <div class="grid-container elevation-1">
+            <div id="grid" class="grid"></div>
+        </div>
+
+        <div class="code-output elevation-1">
+            <div class="code-header">
+                <h3>
+                    <span class="material-icons">code</span>
+                    Generated Code
+                </h3>
+                <div class="code-tabs">
+                    <button class="tab-button active" data-tab="css">
+                        <span class="material-icons">css</span>
+                        CSS
+                    </button>
+                    <button class="tab-button" data-tab="html">
+                        <span class="material-icons">html</span>
+                        HTML
+                    </button>
+                </div>
+                <button id="copyCode" class="btn-secondary">
+                    <span class="material-icons">content_copy</span>
+                    Copy Code
+                </button>
+            </div>
+            <div class="tab-content">
+                <div id="cssTab" class="tab-pane active">
+                    <pre id="cssCode"></pre>
+                </div>
+                <div id="htmlTab" class="tab-pane">
+                    <pre id="htmlCode"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="snackbar">CSS code copied to clipboard!</div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content elevation-2">
+            <div class="modal-header">
+                <h2>
+                    <span class="material-icons">school</span>
+                    How to Use CSS Grid Generator
+                </h2>
+                <button class="btn-icon close-modal" aria-label="Close">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Visual Grid Builder</h3>
+                        <p>Click and drag in the grid builder area to visually create your grid layout. The grid will update automatically as you drag.</p>
+                    </div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Fine-tune Your Grid</h3>
+                        <p>Adjust the number of rows, columns, and gap size using the input controls. Values are limited to 1-12 for rows/columns and 0-50px for gap.</p>
+                    </div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Arrange Grid Items</h3>
+                        <p>Drag and drop the generated grid items to rearrange them. Each item can be moved to any position in the grid.</p>
+                    </div>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Get the CSS Code</h3>
+                        <p>The CSS code for your grid layout is automatically generated. Click the "Copy CSS" button to copy the code to your clipboard.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary close-modal">
+                    <span class="material-icons">check</span>
+                    Got it!
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
