@@ -2,6 +2,12 @@
 
 A collection of modern, interactive tools to help you generate CSS code for common layout patterns and components. Built with vanilla JavaScript and modern CSS, these tools provide an intuitive visual interface for creating complex layouts.
 
+[![Live Demo](https://img.shields.io/badge/LIVE-DEMO-brightgreen.svg)](https://axe020.github.io/html-css-generator-tool.github.io/)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+[🌐 Try Live Demo](https://axe020.github.io/html-css-generator-tool.github.io/) • [📖 Documentation](#-features) • [🚀 Getting Started](#-getting-started) • [💻 Usage](#-usage)
+
 ![CSS Generators Preview](preview.png)
 
 ## 🛠 Available Tools
