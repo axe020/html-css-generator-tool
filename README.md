@@ -185,8 +185,36 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or suggestions, feel free to open an issue or reach out to me:
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- GitHub: [@yourusername](https://github.com/axe020)
+
+## Serving the Files Locally
+
+You can serve these tools using any local development server. Here are a few options:
+
+### Using Node.js
+
+1. Install Node.js from [nodejs.org](https://nodejs.org)
+2. Install a simple HTTP server:
+   ```bash
+   npm install -g http-server
+   ```
+3. Navigate to the project directory:
+   ```bash
+   cd path/to/generators
+   ```
+4. Start the server:
+   ```bash
+   http-server
+   ```
+5. Open your browser and visit `http://localhost:8080`
+
+### Using Live Server (VS Code)
+
+1. Install the "Live Server" extension in VS Code
+2. Right-click on any HTML file
+3. Select "Open with Live Server"
+
+Choose the method that best suits your development environment. The tools will work with any static file server.
 
 ---
 
