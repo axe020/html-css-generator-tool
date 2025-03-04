@@ -1,16 +1,14 @@
 :root {
-    --primary-color: #6200ee;
+    --primary: #6200ee;
     --primary-hover: #3700b3;
-    --secondary-color: #03dac6;
-    --secondary-hover: #018786;
-    --background: #f5f5f5;
     --surface: #ffffff;
-    --on-surface: #1d1d1d;
+    --background: #f5f5f5;
+    --text: #1d1d1d;
+    --border: #e0e0e0;
     --elevation-1: 0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
     --elevation-2: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 * {
     margin: 0;
@@ -19,11 +17,11 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
     line-height: 1.6;
     padding: 20px;
-    background-color: var(--background);
-    color: var(--on-surface);
 }
 
 .container {
@@ -39,6 +37,21 @@ body {
     box-shadow: var(--elevation-2);
 }
 
+header {
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
 .controls {
     background-color: var(--surface);
     padding: 24px;
@@ -51,18 +64,34 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 2rem;
     position: relative;
 }
 
 .header .material-icons {
     font-size: 32px;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 h1 {
-    color: var(--on-surface);
     font-weight: 500;
+    color: var(--primary);
+}
+
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+}
+
+.icon-wrapper .material-icons {
+    font-size: 28px;
+    color: white;
 }
 
 .grid-controls {
@@ -80,7 +109,7 @@ h1 {
 
 label {
     font-weight: 500;
-    color: var(--on-surface);
+    color: var(--text);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -88,7 +117,7 @@ label {
 
 label .material-icons {
     font-size: 20px;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .input-wrapper {
@@ -108,12 +137,12 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-    border-color: var(--primary-color);
+    border-color: var(--primary);
     outline: none;
 }
 
 input[type="number"]:hover {
-    border-color: var(--on-surface);
+    border-color: var(--text);
 }
 
 .ripple-container {
@@ -143,7 +172,7 @@ button {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: white;
 }
 
@@ -153,7 +182,7 @@ button {
 
 .btn-secondary {
     background-color: var(--secondary-color);
-    color: var(--on-surface);
+    color: var(--text);
 }
 
 .btn-secondary:hover {
@@ -228,7 +257,7 @@ button .material-icons {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--on-surface);
+    color: var(--text);
 }
 
 .code-tabs {
@@ -245,7 +274,7 @@ button .material-icons {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--on-surface);
+    color: var(--text);
     opacity: 0.7;
     transition: var(--transition);
 }
@@ -255,7 +284,7 @@ button .material-icons {
 }
 
 .tab-button.active {
-    color: var(--primary-color);
+    color: var(--primary);
     opacity: 1;
     background-color: rgba(98, 0, 238, 0.08);
 }
@@ -338,7 +367,7 @@ pre {
     align-items: center;
     gap: 8px;
     margin-bottom: 16px;
-    color: var(--on-surface);
+    color: var(--text);
 }
 
 .builder-container {
@@ -376,13 +405,13 @@ pre {
     background-image: 
         linear-gradient(rgba(98, 0, 238, 0.2) 1px, transparent 1px),
         linear-gradient(90deg, rgba(98, 0, 238, 0.2) 1px, transparent 1px);
-    border-color: var(--primary-color);
+    border-color: var(--primary);
 }
 
 .builder-overlay {
     position: absolute;
     background-color: rgba(98, 0, 238, 0.15);
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--primary);
     border-radius: 4px;
     pointer-events: none;
     transition: all 0.1s ease;
@@ -398,7 +427,7 @@ pre {
     margin-top: 12px;
     text-align: center;
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .builder-grid::before {
@@ -439,7 +468,7 @@ pre {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
+    color: var(--primary);
     transition: var(--transition);
     margin-left: auto;
 }
@@ -506,7 +535,7 @@ pre {
 }
 
 .modal-header .material-icons {
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .modal-body {
@@ -534,7 +563,7 @@ pre {
 .step-number {
     width: 32px;
     height: 32px;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -552,7 +581,7 @@ pre {
     margin: 0 0 8px 0;
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--on-surface);
+    color: var(--text);
 }
 
 .step-content p {
@@ -577,4 +606,44 @@ pre {
         gap: 12px;
         margin-bottom: 20px;
     }
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: var(--transition);
+}
+
+.back-button:hover {
+    color: var(--primary);
+}
+
+.back-button .material-icons {
+    margin-right: 0.5rem;
+}
+
+.help-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: #666;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.help-button:hover {
+    background: var(--background);
+    color: var(--primary);
+    border-color: var(--primary);
 } 

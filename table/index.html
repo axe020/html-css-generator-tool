@@ -3,130 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Generator</title>
+    <title>Table Generator - CSS Generators</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        
-
-        
-
+        <header>
+            <a href="../index.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                Back to Tools
+            </a>
+           <button id="instructionsBtn" class="help-button">
+                <span class="material-icons">help_outline</span>
+                How to Use
+            </button>
+        </header>
+        <div class="controls">
+            <div class="header">
+                <div class="title-group">
+                    <div class="icon-wrapper">
+                        <span class="material-icons">table_chart</span>
+                    </div>
+                    <h1>Table Generator</h1>
+                </div>
             
-            <div class="controls">
-                <header>
-                    <div class="title-group">
-                        <div class="icon-wrapper">
-                            <span class="material-icons">table_chart</span>
-                        </div>
-                        <h1>Table Generator</h1>
-                    </div>
-                
-
-                    <button id="instructionsBtn" class="btn-icon" aria-label="Help">
-                        <span class="material-icons">help_outline</span>
-                    </button>
-                </header>
-
-                <div class="builder-container elevation-1">
-                    <h3>
-                        <span class="material-icons">drag_indicator</span>
-                        Visual Table Builder
-                    </h3>
-                    <div id="tableBuilder" class="builder">
-                        <div id="builderOverlay"></div>
-                        <span id="builderSize">Drag to create table</span>
-                    </div>
-                </div>
-                
-
-
-                <div class="grid-controls">
-                    <div class="control-group">
-                        <label for="rows">
-                            <span class="material-icons">table_rows</span>
-                            Rows
-                        </label>
-                        <div class="input-wrapper">
-                            <input type="number" id="rowsInput" value="3" min="1" max="12">
-                            <div class="ripple-container"></div>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="columns">
-                            <span class="material-icons">view_column</span>
-                            Columns
-                        </label>
-                        <div class="input-wrapper">
-                            <input type="number" id="columnsInput" value="3" min="1" max="12">
-                            <div class="ripple-container"></div>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="gap">
-                            <span class="material-icons">border_outer</span>
-                            Border Width (px)
-                        </label>
-                        <div class="input-wrapper">
-                            <input type="number" id="borderInput" value="1" min="0" max="10">
-                            <div class="ripple-container"></div>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label for="gap">
-                            <span class="material-icons">padding</span>
-                            Cell Padding (px)
-                        </label>
-                        <div class="input-wrapper">
-                            <input type="number" id="paddingInput" value="8" min="0" max="20">
-                            <div class="ripple-container"></div>
-                        </div>
-                    </div>
-                
+            </div>
+            <div class="builder-container elevation-1">
+                <h3>
+                    <span class="material-icons">drag_indicator</span>
+                    Visual Table Builder
+                </h3>
+                <div id="tableBuilder" class="builder">
+                    <div id="builderOverlay"></div>
+                    <span id="builderSize">Drag to create table</span>
                 </div>
             </div>
+            
 
-            <div id="tablePreview" class="table-preview"></div>
 
-            <div class="code-section">
-                <div class="tab-buttons">
-                    <button class="tab-button active" data-tab="css">
-                        <span class="material-icons">css</span> CSS
-                    </button>
-                    <button class="tab-button" data-tab="html">
-                        <span class="material-icons">html</span> HTML
-                    </button>
-                </div>
-                <div class="code-container">
-                    <div class="tab-pane active" id="cssCode">
-                        <pre><code id="cssCodeContent"></code></pre>
+            <div class="grid-controls">
+                <div class="control-group">
+                    <label for="rows">
+                        <span class="material-icons">table_rows</span>
+                        Rows
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="rowsInput" value="3" min="1" max="12">
+                        <div class="ripple-container"></div>
                     </div>
-                    <div class="tab-pane" id="htmlCode">
-                        <pre><code id="htmlCodeContent"></code></pre>
-                    </div>
-                    <button id="copyButton" class="copy-button">
-                        <span class="material-icons">content_copy</span>
-                    </button>
                 </div>
-            </div>
+                <div class="control-group">
+                    <label for="columns">
+                        <span class="material-icons">view_column</span>
+                        Columns
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="columnsInput" value="3" min="1" max="12">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="gap">
+                        <span class="material-icons">border_outer</span>
+                        Border Width (px)
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="borderInput" value="1" min="0" max="10">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
 
-        <div id="instructionsModal" class="modal">
-            <div class="modal-content">
-                <h2>How to Use the Table Generator</h2>
-                <ol>
-                    <li>Use the visual builder by dragging to create your table size</li>
-                    <li>Or manually adjust rows and columns using the input controls</li>
-                    <li>Customize border width and cell padding as needed</li>
-                    <li>Switch between CSS and HTML tabs to view both code versions</li>
-                    <li>Click the copy button to copy the visible code</li>
-                </ol>
-                <button id="closeModal">Got it!</button>
+                <div class="control-group">
+                    <label for="gap">
+                        <span class="material-icons">padding</span>
+                        Cell Padding (px)
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="paddingInput" value="8" min="0" max="20">
+                        <div class="ripple-container"></div>
+                    </div>
+                </div>
+            
             </div>
         </div>
 
-        <div id="snackbar"></div>
+        <div id="tablePreview" class="table-preview"></div>
+
+        <div class="code-section">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="css">
+                    <span class="material-icons">css</span> CSS
+                </button>
+                <button class="tab-button" data-tab="html">
+                    <span class="material-icons">html</span> HTML
+                </button>
+            </div>
+            <div class="code-container">
+                <div class="tab-pane active" id="cssCode">
+                    <pre><code id="cssCodeContent"></code></pre>
+                </div>
+                <div class="tab-pane" id="htmlCode">
+                    <pre><code id="htmlCodeContent"></code></pre>
+                </div>
+                <button id="copyButton" class="copy-button">
+                    <span class="material-icons">content_copy</span>
+                </button>
+            </div>
+        </div>
+
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <h2>How to Use the Table Generator</h2>
+            <ol>
+                <li>Use the visual builder by dragging to create your table size</li>
+                <li>Or manually adjust rows and columns using the input controls</li>
+                <li>Customize border width and cell padding as needed</li>
+                <li>Switch between CSS and HTML tabs to view both code versions</li>
+                <li>Click the copy button to copy the visible code</li>
+            </ol>
+            <button id="closeModal">Got it!</button>
+        </div>
+    </div>
+
+    <div id="snackbar"></div>
     </div>
     <script src="script.js"></script>
 </body>

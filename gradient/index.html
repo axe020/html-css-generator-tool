@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Gradient Generator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                Back to Tools
+            </a>
+            <h1>CSS Gradient Generator</h1>
+            <p class="subtitle">Create beautiful CSS gradients with an intuitive visual editor</p>
+            <button id="howToUse" class="help-button">
+                <span class="material-icons">help_outline</span>
+                How to Use
+            </button>
+        </header>
+
+        <div class="generator">
+            <div class="controls">
+                <div class="control-group">
+                    <h3>
+                        <span class="material-icons">gradient</span>
+                        Gradient Type
+                    </h3>
+                    <div class="control-item">
+                        <select id="gradientType">
+                            <option value="linear">Linear Gradient</option>
+                            <option value="radial">Radial Gradient</option>
+                            <option value="conic">Conic Gradient</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-group" id="angleControl">
+                    <h3>
+                        <span class="material-icons">rotate_right</span>
+                        Angle
+                    </h3>
+                    <div class="control-item">
+                        <input type="range" id="angle" min="0" max="360" value="90">
+                        <span id="angleValue">90°</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>
+                        <span class="material-icons">palette</span>
+                        Colors
+                    </h3>
+                    <div id="colorStops" class="color-stops">
+                        <div class="color-stop">
+                            <input type="color" value="#6200ee">
+                            <input type="number" min="0" max="100" value="0" class="stop-position">
+                            <button class="remove-color">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </div>
+                        <div class="color-stop">
+                            <input type="color" value="#03dac6">
+                            <input type="number" min="0" max="100" value="100" class="stop-position">
+                            <button class="remove-color">
+                                <span class="material-icons">close</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button id="addColor" class="btn-secondary">
+                        <span class="material-icons">add</span>
+                        Add Color
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h3>Preview</h3>
+                <div id="gradientPreview" class="preview-container"></div>
+            </div>
+
+            <div class="code-section">
+                <div class="code-tabs">
+                    <button class="tab-button active" data-tab="css">
+                        <span class="material-icons">css</span>
+                        CSS
+                    </button>
+                    <button class="tab-button" data-tab="tailwind">
+                        <span class="material-icons">code</span>
+                        Tailwind
+                    </button>
+                </div>
+                <div class="code-container">
+                    <div class="code-pane active" id="cssCode">
+                        <pre><code></code></pre>
+                    </div>
+                    <div class="code-pane" id="tailwindCode">
+                        <pre><code></code></pre>
+                    </div>
+                    <button id="copyCode" class="copy-button">
+                        <span class="material-icons">content_copy</span>
+                        Copy Code
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <span class="material-icons">school</span>
+                    How to Use Gradient Generator
+                </h2>
+                <button class="close-button">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section>
+                    <h3>1. Choose Gradient Type</h3>
+                    <p>Select between Linear, Radial, or Conic gradients to create different effects.</p>
+                </section>
+                <section>
+                    <h3>2. Adjust Angle</h3>
+                    <p>For linear gradients, use the angle slider to change the direction of the gradient.</p>
+                </section>
+                <section>
+                    <h3>3. Customize Colors</h3>
+                    <p>Add, remove, or modify color stops. Adjust their positions to create unique gradients.</p>
+                </section>
+                <section>
+                    <h3>4. Get the Code</h3>
+                    <p>Copy the generated CSS or Tailwind code to use in your project.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="snackbar"></div>
+    <script src="script.js"></script>
+</body>
+</html> 

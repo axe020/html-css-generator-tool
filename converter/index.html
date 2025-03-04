@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Converter - CSS Generators</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                Back to Tools
+            </a>
+            <h1>CSS Converter</h1>
+            <p class="subtitle">Convert CSS to LESS, SCSS, or Tailwind CSS with ease</p>
+            <button id="howToUse" class="help-button">
+                <span class="material-icons">help_outline</span>
+                How to Use
+            </button>
+        </header>
+
+        <div class="converter">
+            <div class="input-section">
+                <div class="control-group">
+                    <h3>
+                        <span class="material-icons">code</span>
+                        Input CSS
+                    </h3>
+                    <div class="control-item">
+                        <textarea id="cssInput" placeholder="Paste your CSS code here..." rows="15"></textarea>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>
+                        <span class="material-icons">transform</span>
+                        Convert To
+                    </h3>
+                    <div class="control-item">
+                        <select id="convertType">
+                            <option value="less">LESS</option>
+                            <option value="scss">SCSS</option>
+                            <option value="tailwind">Tailwind CSS</option>
+                        </select>
+                    </div>
+                    <button id="convertBtn" class="btn-primary">
+                        <span class="material-icons">autorenew</span>
+                        Convert
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="code-section">
+                    <div class="code-header">
+                        <h3>
+                            <span class="material-icons">code</span>
+                            Output
+                        </h3>
+                        <button id="copyCode" class="copy-button">
+                            <span class="material-icons">content_copy</span>
+                            Copy Code
+                        </button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code id="outputCode"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <span class="material-icons">school</span>
+                    How to Use CSS Converter
+                </h2>
+                <button class="close-button">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section>
+                    <h3>1. Input CSS</h3>
+                    <p>Paste your CSS code in the input textarea. The tool supports standard CSS syntax.</p>
+                </section>
+                <section>
+                    <h3>2. Choose Output Format</h3>
+                    <p>Select your desired output format: LESS, SCSS, or Tailwind CSS.</p>
+                </section>
+                <section>
+                    <h3>3. Convert</h3>
+                    <p>Click the Convert button to transform your CSS code to the selected format.</p>
+                </section>
+                <section>
+                    <h3>4. Copy Result</h3>
+                    <p>Copy the generated code and use it in your project.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="snackbar"></div>
+    <script src="script.js"></script>
+</body>
+</html> 

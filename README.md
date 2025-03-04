@@ -34,6 +34,29 @@ A collection of modern, interactive tools to help you generate CSS code for comm
 - Customizable gaps and columns
 - Generated CSS code with browser support
 
+### 4. Flexbox Generator
+- Interactive flexbox container configuration
+- Customizable flex properties
+- Alignment and distribution controls
+- Real-time preview
+- Generated CSS code
+
+### 5. Gradient Generator
+- Support for Linear, Radial, and Conic gradients
+- Multiple color stops with position control
+- Visual angle adjustment for linear gradients
+- Real-time preview
+- Generated CSS and Tailwind code
+- Color stop management (add/remove/modify)
+
+### 6. CSS Converter
+- Convert CSS to LESS, SCSS, or Tailwind CSS
+- Automatic variable extraction for colors
+- Smart conversion of media queries to mixins
+- Intelligent Tailwind class mapping
+- Real-time preview
+- Copy-to-clipboard functionality
+
 ## ✨ Features
 
 - **Visual Builders**: Drag-and-drop interface for creating layouts
@@ -90,6 +113,26 @@ http://localhost:8000
 3. Adjust columns and gaps as needed
 4. Copy the generated CSS code
 
+### Flexbox Generator
+1. Open the Flexbox Generator tool
+2. Configure container properties (direction, justify, align)
+3. Adjust item properties and count
+4. Copy the generated CSS code
+
+### Gradient Generator
+1. Open the Gradient Generator tool
+2. Choose gradient type (Linear, Radial, or Conic)
+3. Add and customize color stops
+4. Adjust positions and angles
+5. Copy the CSS or Tailwind code
+
+### CSS Converter
+1. Open the CSS Converter tool
+2. Paste your CSS code in the input area
+3. Choose your target format (LESS, SCSS, or Tailwind)
+4. Click Convert to transform your code
+5. Copy the generated code
+
 ## 🎨 Customization
 
 Each tool provides various customization options:
@@ -110,6 +153,13 @@ Each tool provides various customization options:
   - Gap size
   - Item sizes
   - Responsive layouts
+
+- **CSS Converter**:
+  - Target format selection
+  - Color variable naming
+  - Mixin generation
+  - Tailwind class mapping
+  - Output formatting
 
 ## 🤝 Contributing
 

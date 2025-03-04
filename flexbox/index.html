@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Generator - CSS Generators</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="back-button">
+                <span class="material-icons">arrow_back</span>
+                Back to Tools
+            </a>
+            <h1>Flexbox Generator</h1>
+            <p class="subtitle">Create flexible and responsive layouts with CSS Flexbox</p>
+            <button id="howToUse" class="help-button">
+                <span class="material-icons">help_outline</span>
+                How to Use
+            </button>
+        </header>
+
+        <main class="generator">
+            <div class="controls">
+                <div class="control-group">
+                    <h3>Container Properties</h3>
+                    <div class="control-item">
+                        <label for="flexDirection">Flex Direction</label>
+                        <select id="flexDirection">
+                            <option value="row">Row</option>
+                            <option value="column">Column</option>
+                            <option value="row-reverse">Row Reverse</option>
+                            <option value="column-reverse">Column Reverse</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label for="justifyContent">Justify Content</label>
+                        <select id="justifyContent">
+                            <option value="flex-start">Flex Start</option>
+                            <option value="flex-end">Flex End</option>
+                            <option value="center">Center</option>
+                            <option value="space-between">Space Between</option>
+                            <option value="space-around">Space Around</option>
+                            <option value="space-evenly">Space Evenly</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label for="alignItems">Align Items</label>
+                        <select id="alignItems">
+                            <option value="stretch">Stretch</option>
+                            <option value="flex-start">Flex Start</option>
+                            <option value="flex-end">Flex End</option>
+                            <option value="center">Center</option>
+                            <option value="baseline">Baseline</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label for="flexWrap">Flex Wrap</label>
+                        <select id="flexWrap">
+                            <option value="nowrap">No Wrap</option>
+                            <option value="wrap">Wrap</option>
+                            <option value="wrap-reverse">Wrap Reverse</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label for="gap">Gap</label>
+                        <input type="number" id="gap" value="16" min="0" max="100">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>Item Properties</h3>
+                    <div class="control-item">
+                        <label for="itemCount">Number of Items</label>
+                        <input type="number" id="itemCount" value="3" min="1" max="12">
+                    </div>
+                    <div class="control-item">
+                        <label for="flexGrow">Flex Grow</label>
+                        <input type="number" id="flexGrow" value="0" min="0" max="5">
+                    </div>
+                    <div class="control-item">
+                        <label for="flexShrink">Flex Shrink</label>
+                        <input type="number" id="flexShrink" value="1" min="0" max="5">
+                    </div>
+                    <div class="control-item">
+                        <label for="flexBasis">Flex Basis</label>
+                        <input type="text" id="flexBasis" value="auto" placeholder="auto, 100px, 50%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <div class="preview-container">
+                    <div id="flexContainer" class="flex-container">
+                        <!-- Flex items will be generated here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-section">
+                <div class="code-tabs">
+                    <button class="tab-button active" data-tab="css">CSS</button>
+                    <button class="tab-button" data-tab="html">HTML</button>
+                </div>
+                <div class="code-container">
+                    <div class="code-pane active" id="cssCode">
+                        <pre><code></code></pre>
+                    </div>
+                    <div class="code-pane" id="htmlCode">
+                        <pre><code></code></pre>
+                    </div>
+                </div>
+                <button id="copyCode" class="copy-button">
+                    <span class="material-icons">content_copy</span>
+                    Copy Code
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How to Use the Flexbox Generator</h2>
+                <button class="close-button">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section>
+                    <h3>Container Properties</h3>
+                    <ul>
+                        <li><strong>Flex Direction:</strong> Choose how flex items are arranged (row, column, reverse)</li>
+                        <li><strong>Justify Content:</strong> Control alignment along the main axis</li>
+                        <li><strong>Align Items:</strong> Control alignment along the cross axis</li>
+                        <li><strong>Flex Wrap:</strong> Determine if items should wrap to new lines</li>
+                        <li><strong>Gap:</strong> Set spacing between flex items</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Item Properties</h3>
+                    <ul>
+                        <li><strong>Number of Items:</strong> Add or remove flex items (1-12)</li>
+                        <li><strong>Flex Grow:</strong> Control how items grow relative to others</li>
+                        <li><strong>Flex Shrink:</strong> Control how items shrink relative to others</li>
+                        <li><strong>Flex Basis:</strong> Set the initial size of items</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Preview and Code</h3>
+                    <ul>
+                        <li>The preview section shows a live representation of your flexbox layout</li>
+                        <li>Switch between CSS and HTML tabs to view the generated code</li>
+                        <li>Click the copy button to copy the code to your clipboard</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="snackbar">Code copied to clipboard!</div>
+    <script src="script.js"></script>
+</body>
+</html>
