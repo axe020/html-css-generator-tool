@@ -57,6 +57,20 @@ A collection of modern, interactive tools to help you generate CSS code for comm
 - Real-time preview
 - Copy-to-clipboard functionality
 
+### 7. HTML5 Boilerplate Generator
+- Generate modern HTML5 boilerplate code
+- Integration options for popular frameworks and libraries:
+  - CSS Frameworks: Bootstrap, Tailwind CSS, Foundation, Pure.css
+  - CSS Reset/Normalize: Normalize.css, Reset.css
+  - UI Libraries: Next UI, Master CSS
+  - Icons: Font Awesome
+  - Animations: Animate.css
+- Customizable meta tags and SEO options
+- Responsive viewport settings
+- Script loading optimization options
+- Generated HTML with proper indentation
+- Copy-to-clipboard functionality
+
 ## ✨ Features
 
 - **Visual Builders**: Drag-and-drop interface for creating layouts
@@ -79,19 +93,41 @@ git clone https://github.com/yourusername/css-generators.git
 cd css-generators
 ```
 
-3. Serve the files using any local server. For example, using Python:
-```bash
-# Python 3
-python -m http.server 8000
+3. Serve the files using any local development server:
 
-# Python 2
-python -m SimpleHTTPServer 8000
-```
+### Using Node.js
 
-4. Open your browser and navigate to:
-```
-http://localhost:8000
-```
+1. Install Node.js from [nodejs.org](https://nodejs.org)
+2. Install a simple HTTP server:
+   ```bash
+   npm install -g http-server
+   ```
+3. Navigate to the project directory:
+   ```bash
+   cd path/to/generators
+   ```
+4. Start the server:
+   ```bash
+   http-server
+   ```
+5. Open your browser and visit `http://localhost:8080`
+
+### Using Live Server (VS Code)
+
+1. Install the "Live Server" extension in VS Code
+2. Right-click on `index.html` in the root directory
+3. Select "Open with Live Server"
+
+4. Access the tools:
+- Grid Generator: `/grid/index.html`
+- Table Generator: `/table/index.html`
+- Masonry Generator: `/masonry/index.html`
+- Flexbox Generator: `/flexbox/index.html`
+- Gradient Generator: `/gradient/index.html`
+- CSS Converter: `/converter/index.html`
+- HTML5 Boilerplate Generator: `/boilerplate/index.html`
+
+Choose the method that best suits your development environment. The tools will work with any static file server.
 
 ## 💻 Usage
 
@@ -132,6 +168,13 @@ http://localhost:8000
 3. Choose your target format (LESS, SCSS, or Tailwind)
 4. Click Convert to transform your code
 5. Copy the generated code
+
+### HTML5 Boilerplate Generator
+1. Open the HTML5 Boilerplate Generator tool
+2. Select desired frameworks and libraries
+3. Configure meta tags and viewport settings
+4. Choose script loading options
+5. Copy the generated HTML code
 
 ## 🎨 Customization
 

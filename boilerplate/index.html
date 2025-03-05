@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Boilerplate Generator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="back-button">
+            <span class="material-icons">arrow_back</span>
+            Back to Tools
+        </a>
+        <h1>HTML5 Boilerplate Generator</h1>
+        <p class="subtitle">Generate modern HTML5 boilerplate code with popular frameworks and libraries</p>
+        <button id="howToUse" class="help-button">
+            <span class="material-icons">help_outline</span>
+            How to Use
+        </button>
+    </header>
+
+    <main class="container">
+        <section class="options-section">
+            <h2>Framework & Library Options</h2>
+            
+            <div class="option-group">
+                <h3>CSS Frameworks</h3>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="framework" value="bootstrap">
+                        Bootstrap (v5.3.3)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="framework" value="tailwind">
+                        Tailwind CSS (v3.4.1)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="framework" value="foundation">
+                        Foundation (v6.8.1)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="framework" value="pure">
+                        Pure.css (v3.0.0)
+                    </label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <h3>CSS Reset/Normalize</h3>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="reset" value="normalize">
+                        Normalize.css (v8.0.1)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="reset" value="reset">
+                        Reset.css
+                    </label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <h3>UI Libraries</h3>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="ui" value="nextui">
+                        Next UI (v2.2.9)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ui" value="master">
+                        Master CSS (v2.0.0)
+                    </label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <h3>Additional Libraries</h3>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="additional" value="fontawesome">
+                        Font Awesome (v6.5.1)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="additional" value="animate">
+                        Animate.css (v4.1.1)
+                    </label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <h3>Meta Tags</h3>
+                <div class="input-group">
+                    <label>
+                        Title:
+                        <input type="text" id="pageTitle" placeholder="My Website">
+                    </label>
+                    <label>
+                        Description:
+                        <input type="text" id="description" placeholder="A description of my website">
+                    </label>
+                    <label>
+                        Keywords:
+                        <input type="text" id="keywords" placeholder="keyword1, keyword2, keyword3">
+                    </label>
+                    <label>
+                        Author:
+                        <input type="text" id="author" placeholder="Your Name">
+                    </label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <h3>Social Media Meta Tags</h3>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="social" value="opengraph" checked>
+                        Open Graph (Facebook)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="social" value="twitter" checked>
+                        Twitter Cards
+                    </label>
+                </div>
+                <div class="social-meta-inputs">
+                    <div class="input-group">
+                        <label>
+                            Site Name:
+                            <input type="text" id="siteName" placeholder="My Website Name">
+                        </label>
+                        <label>
+                            Image URL:
+                            <input type="text" id="socialImage" placeholder="https://example.com/image.jpg">
+                        </label>
+                        <label>
+                            Twitter Handle:
+                            <input type="text" id="twitterHandle" placeholder="@username">
+                        </label>
+                        <label>
+                            URL:
+                            <input type="text" id="siteUrl" placeholder="https://example.com">
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <h4>Additional Options</h4>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="social-extra" value="type" checked>
+                            Content Type (website)
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="social-extra" value="locale" checked>
+                            Locale (en_US)
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" name="social-extra" value="card" checked>
+                            Twitter Card Type (summary_large_image)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <h3>Script Loading</h3>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="loading" value="defer" checked>
+                        Defer (Recommended)
+                    </label>
+                    <label>
+                        <input type="radio" name="loading" value="async">
+                        Async
+                    </label>
+                    <label>
+                        <input type="radio" name="loading" value="normal">
+                        Normal
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section class="output-section">
+            <div class="code-header">
+                <h2>Generated HTML</h2>
+                <div class="button-group">
+                    <button id="copyCode" class="action-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                            <path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/>
+                        </svg>
+                        Copy Code
+                    </button>
+                    <button id="downloadCode" class="action-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                            <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+                        </svg>
+                        Download
+                    </button>
+                </div>
+            </div>
+            <pre><code id="outputCode"></code></pre>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>
+                    <span class="material-icons">school</span>
+                    How to Use HTML Boilerplate
+                </h2>
+                <button class="close-button">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section>
+                    <p>1. Select desired frameworks and libraries from the available options</p>
+                </section>
+
+                <section>
+                    <p>2. Configure meta tags for SEO optimization</p>
+                </section>
+
+                <section>
+                    <p>3. Choose script loading strategy</p>
+                </section>
+
+                <section>
+                    <p>4. Copy the generated HTML code</p>
+                </section>
+                <section>
+                    <p>5. Use the code as a starting point for your project</p>
+                </section>
+            <p><strong>Note:</strong> You can select multiple frameworks and libraries, but be mindful of potential conflicts.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="snackbar"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
