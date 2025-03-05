@@ -176,33 +176,6 @@ Choose the method that best suits your development environment. The tools will w
 4. Choose script loading options
 5. Copy the generated HTML code
 
-## 🎨 Customization
-
-Each tool provides various customization options:
-
-- **Grid Generator**:
-  - Number of rows and columns
-  - Gap between cells
-  - Responsive breakpoints
-
-- **Table Generator**:
-  - Border width
-  - Cell padding
-  - Header styling
-  - Row hover effects
-
-- **Masonry Generator**:
-  - Column count
-  - Gap size
-  - Item sizes
-  - Responsive layouts
-
-- **CSS Converter**:
-  - Target format selection
-  - Color variable naming
-  - Mixin generation
-  - Tailwind class mapping
-  - Output formatting
 
 ## 🤝 Contributing
 
@@ -228,7 +201,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or suggestions, feel free to open an issue or reach out to me:
 
-- GitHub: [@yourusername](https://github.com/axe020)
+- GitHub: [@axe020](https://github.com/axe020)
 
 ## Serving the Files Locally
 
@@ -261,4 +234,4 @@ Choose the method that best suits your development environment. The tools will w
 
 ---
 
-Made with ❤️ by [Your Name] 
+Made with ❤️ by Akshay Kadam 
